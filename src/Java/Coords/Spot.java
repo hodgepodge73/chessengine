@@ -16,6 +16,18 @@ public class Spot {
         this.y = y;
         this.take = take;
     }
+    public Spot(Object o) throws Exception {
+        if (o instanceof Spot){
+            Spot p = (Spot) o;
+            this.x = p.getX();
+            this.y = p.getY();
+            this.take = p.getTake();
+        }
+        else {
+            throw new Exception("Spot invalid");
+        }
+        
+    }
 
     public int hashCode() {
         return x + 31*y;

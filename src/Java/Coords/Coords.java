@@ -10,9 +10,19 @@ public class Coords {
     }
 
     public Coords(int x, int y) {
-        super();
         this.x = x;
         this.y = y;
+    }
+    public Coords(Object o) throws Exception {
+        if (o instanceof Coords){
+            Coords p = (Coords) o;
+            this.x = p.getX();
+            this.y = p.getY();
+        }
+        else {
+            throw new Exception("Coord invalid");
+        }
+        
     }
 
     public int hashCode() {

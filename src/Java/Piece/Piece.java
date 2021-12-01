@@ -80,4 +80,18 @@ public abstract class Piece{
     public String toString(){
         return new String(this.pieceName + " " + this.location.toString() + "\n" + this.moveList.toString());
     }
+
+    public void copy(Object o) throws Exception{
+        if (!(o instanceof Piece)){
+            throw new Exception("Not a Piece");
+        }
+        else{
+            Piece p = (Piece) o;
+            this.location = new Coords(p.getLocation());
+            this.masterBoard = new Board(p.getBoard());
+            this.moveList = new ArrayList<Spot>(p.getMoveList());
+            this.pieceName = new String(p.getPieceName());
+           //previous
+        }
+    }
 }
