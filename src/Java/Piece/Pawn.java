@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import Coords.*;
 
 public class Pawn extends Piece{
-    public Pawn(int x, int y) throws Exception{
-        super(x, y, "Pawn");
+    public Pawn(int x, int y, boolean colour) throws Exception{
+        super(x, y, "Pawn", colour);
         createMoveList();
     }
     public void createMoveList(){

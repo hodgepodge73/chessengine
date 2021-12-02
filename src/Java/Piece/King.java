@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import Coords.*;
 
 public class King extends Piece{
-    public King(int x, int y) throws Exception{
-        super(x, y, "King");
+    public King(int x, int y, boolean colour) throws Exception{
+        super(x, y, "King", colour);
         createMoveList();
     }
     public void createMoveList(){
@@ -33,18 +33,18 @@ public class King extends Piece{
             newMoveList.add(new Spot(x+1, y, 3));
         this.setMoveList(newMoveList);
     }
-    public static void main(String args[]){
-            try{
-                King testK = new King(3,3);
-                System.out.println(testK.toString());
-                testK.movePiece(1, 2);
-                System.out.println(testK.toString());
+    // public static void main(String args[]){
+    //         try{
+    //             King testK = new King(3,3);
+    //             System.out.println(testK.toString());
+    //             testK.movePiece(1, 2);
+    //             System.out.println(testK.toString());
     
     
-            }
-            catch(Exception e){
-                System.out.println(e.getMessage());
-            }
+    //         }
+    //         catch(Exception e){
+    //             System.out.println(e.getMessage());
+    //         }
     
-        }
+    //     }
 }

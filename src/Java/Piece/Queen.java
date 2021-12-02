@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import Coords.*;
 
 public class Queen extends Piece{
-    public Queen(int x, int y) throws Exception{
-        super(x, y, "Queen");
+    public Queen(int x, int y, boolean colour) throws Exception{
+        super(x, y, "Queen", colour);
         createMoveList();
     }
     public void createMoveList(){

@@ -12,6 +12,7 @@ public abstract class Piece{
     private ArrayList<Spot> moveList;
     private ArrayList<Spot> previousMoves;
     private Board masterBoard;
+    private boolean colour;
 
 
     public Piece(){
@@ -20,8 +21,9 @@ public abstract class Piece{
         this.moveList = new ArrayList<Spot>();
         this.masterBoard = new Board(8,8);
         this.previousMoves = new ArrayList<Spot>();
+        this.colour = false;
     }
-    public Piece(int x, int y, String type) throws Exception{
+    public Piece(int x, int y, String type, boolean colour) throws Exception{
         super();
         // if (x < 0 || y < 0 || x > 7 || y > 7)
         //     throw new Exception("Invalid Coordinates");
@@ -30,6 +32,7 @@ public abstract class Piece{
         this.moveList = new ArrayList<Spot>();
         this.masterBoard = new Board(8,8);
         this.previousMoves = new ArrayList<Spot>();
+        this.colour = colour;
     }
 
     public void setBoard(Board b){
@@ -42,6 +45,12 @@ public abstract class Piece{
     }
     public Board getBoard(){
         return this.masterBoard;
+    }
+    public boolean getColor(){
+        return this.colour;
+    }
+    public void setColor(boolean col){
+        this.colour = col;
     }
 
     public void setLocation(int x, int y){

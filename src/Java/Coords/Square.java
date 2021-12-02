@@ -16,6 +16,7 @@ public class Square {
         this.x = x;
         this.y = y;
         this.taken = false;
+        pieceOnSquare = null;
     }
     public Square(Object o) throws Exception {
         if (o instanceof Square){
@@ -55,11 +56,42 @@ public class Square {
     }
     public void setPieceOnSquare(Object p) throws Exception{
         if (p instanceof Piece){
-            Piece o = (Piece) p;
-            pieceOnSquare.copy(o);
-        }
-        else{
-            throw new Exception("Not a valid piece on the square");
+            Piece o = (Piece)p;
+            if (x != o.getLocation().getX() || y != o.getLocation().getY())
+                throw new Exception("Must be same square");
+            if (p instanceof Rook){
+                Rook a = (Rook) p;
+                pieceOnSquare = new Rook(a.getLocation().getX(), a.getLocation().getY(), a.getColor());
+                taken = true;
+            }
+            else if (p instanceof Pawn){
+                Pawn a = (Pawn) p;
+                pieceOnSquare = new Pawn(a.getLocation().getX(), a.getLocation().getY(), a.getColor());
+                taken = true;
+            }
+            else if (p instanceof Knight){
+                Knight a = (Knight) p;
+                pieceOnSquare = new Knight(a.getLocation().getX(), a.getLocation().getY(), a.getColor());
+                taken = true;
+            }
+            else if (p instanceof King){
+                King a = (King) p;
+                pieceOnSquare = new King(a.getLocation().getX(), a.getLocation().getY(), a.getColor());
+                taken = true;
+            }
+            else if (p instanceof Queen){
+                Queen a = (Queen) p;
+                pieceOnSquare = new Queen(a.getLocation().getX(), a.getLocation().getY(), a.getColor());
+                taken = true;
+            }
+            else if (p instanceof Bishop){
+                Bishop a = (Bishop) p;
+                pieceOnSquare = new Bishop(a.getLocation().getX(), a.getLocation().getY(), a.getColor());
+                taken = true;
+            }
+            else{
+                throw new Exception("Not a valid piece on the square");
+            }
         }
         
 

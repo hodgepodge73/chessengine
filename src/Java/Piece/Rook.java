@@ -5,8 +5,8 @@ import Coords.*;
 
 public class Rook extends Piece{
 
-    public Rook(int x, int y) throws Exception{
-        super(x, y, "Rook");
+    public Rook(int x, int y, boolean col) throws Exception{
+        super(x, y, "Rook", col);
         createMoveList();
     }
 
