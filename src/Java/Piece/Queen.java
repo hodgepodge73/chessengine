@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import Coords.*;
 
 public class Queen extends Piece{
+    //represents the queen piece
     public Queen(int x, int y, boolean colour) throws Exception{
         super(x, y, "Queen", colour);
         createMoveList();
@@ -46,18 +47,5 @@ public class Queen extends Piece{
         }
         this.setMoveList(newMoveList);
     }
-    // public static void main(String args[]){
-    //         try{
-    //             Queen testBishop = new Queen(3,3);
-    //             System.out.println(testBishop.toString());
-    //             testBishop.movePiece(1, 2);
-    //             System.out.println(testBishop.toString());
     
-    
-    //         }
-    //         catch(Exception e){
-    //             System.out.println(e.getMessage());
-    //         }
-    
-    //     }
 }

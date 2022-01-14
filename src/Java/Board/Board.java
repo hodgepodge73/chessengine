@@ -2,7 +2,7 @@ package Board;
 
 public class Board {
     private int cols, rows;
-
+    //basic board class
     public Board(){
         this.rows = 8;
         this.cols = 8;

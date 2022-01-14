@@ -1,6 +1,7 @@
 package Coords;
 
 public class Coords {
+    //coord just holds coords like a Vector
     private int x;
     private int y;
 

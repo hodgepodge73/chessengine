@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import Coords.*;
 
 public class Rook extends Piece{
-
+    //creates a rook piece - Slider
     public Rook(int x, int y, boolean col) throws Exception{
         super(x, y, "Rook", col);
         createMoveList();

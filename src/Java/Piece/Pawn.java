@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import Coords.*;
 
 public class Pawn extends Piece{
+    //pawn piece
     public Pawn(int x, int y, boolean colour) throws Exception{
         super(x, y, "Pawn", colour);
         createMoveList();
@@ -23,6 +24,10 @@ public class Pawn extends Piece{
             newMoveList.add(new Spot(currX, currY+1, 2));
         }
         this.setMoveList(newMoveList);
+    }
+    //replace self with a Queen instance
+    public void promotion(){
+
     }
     // public static void main(String args[]){
     //     try{

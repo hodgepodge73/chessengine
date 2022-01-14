@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import Coords.*;
 
 public class Bishop extends Piece{
+    //Bishop Piece
     public Bishop(int x, int y, boolean colour) throws Exception{
         super(x, y, "Bishop", colour);
         createMoveList();

@@ -4,7 +4,7 @@ public class Spot {
     private int x;
     private int y;
     private int take; //0 is no no 1 is yes no 2 is no yes 3 is yes yes : capture move
-
+    //spot is like a coord or a square but is more theoretical than the square and is used in determining spots to move to
     public boolean equals(Object o) {
         Spot c = (Spot) o;
         return c.x == x && c.y == y && c.take == take;

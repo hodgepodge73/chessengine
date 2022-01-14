@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import Coords.*;
 
 public class Knight extends Piece{
+    //knight piece
     public Knight(int x, int y, boolean colour) throws Exception{
         super(x, y, "Knight", colour);
         createMoveList();
     }
     public void createMoveList(){
         ArrayList<Spot> newMoveList = new ArrayList<Spot>();
-        //grab going side to side exclude current
+        //L movement
         int currX = this.getLocation().getX();
         int currY = this.getLocation().getY();
         if (currX > 1 && currY >0)

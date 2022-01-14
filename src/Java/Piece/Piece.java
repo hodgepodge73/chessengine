@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import Coords.*;
 import Board.*;
 
-
+//basic piece super class
 public abstract class Piece{
     private Coords location;
     private String pieceName;
@@ -14,7 +14,7 @@ public abstract class Piece{
     private Board masterBoard;
     private boolean colour;
 
-
+    
     public Piece(){
         location = new Coords(0,0);
         this.pieceName = new String("Blank Piece");
@@ -34,7 +34,7 @@ public abstract class Piece{
         this.previousMoves = new ArrayList<Spot>();
         this.colour = colour;
     }
-
+    //each piece can individually set the board
     public void setBoard(Board b){
         try {
             masterBoard.copy(b);
@@ -46,27 +46,32 @@ public abstract class Piece{
     public Board getBoard(){
         return this.masterBoard;
     }
+    //returns black or white
     public boolean getColor(){
         return this.colour;
     }
+    //set the colour
     public void setColor(boolean col){
         this.colour = col;
     }
 
+    //the cartesion coordinate
     public void setLocation(int x, int y){
         this.location = new Coords(x, y);
     }
     public Coords getLocation(){
         return this.location;
     }
-
+    //used to create a set of possible valid moves
     public abstract void createMoveList();
+
     public void setMoveList(ArrayList<Spot> m){
         this.moveList = new ArrayList<Spot>(m);
     }
     public ArrayList<Spot> getMoveList(){
         return this.moveList;
     }
+    //moves a Piece
     public void movePiece(int x, int y) throws Exception{
         Spot newSpace = new Spot(x, y, 2);
         Spot newSpace2 = new Spot(x, y, 3);
@@ -77,6 +82,7 @@ public abstract class Piece{
         setLocation(x, y);
         createMoveList();
     }
+    //creates a log of moves
     public void addPreviousLocale(int x, int y){
         previousMoves.add(new Spot(x, y, 0));
     }

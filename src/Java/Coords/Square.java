@@ -3,6 +3,7 @@ package Coords;
 import Piece.*;
 
 public class Square {
+    //represents a square on the board
     private int x;
     private int y;
     private Boolean taken; //0 is no no 1 is yes no 2 is no yes 3 is yes yes : capture move
@@ -54,6 +55,7 @@ public class Square {
     public Piece getPieceOnSquare(){
         return pieceOnSquare;
     }
+    //used to put a piece onto a square
     public void setPieceOnSquare(Object p) throws Exception{
         if (p instanceof Piece){
             Piece o = (Piece)p;

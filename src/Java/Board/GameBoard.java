@@ -4,6 +4,7 @@ import Coords.*;
 import Piece.*;
 
 public class GameBoard extends Board{
+    //This is a class to describe the behaviour of the game board
     private Square[][] game;
     public final int SIZEOFBOARD = 8;
     public GameBoard(){
@@ -29,6 +30,7 @@ public class GameBoard extends Board{
         }
     }
     public void initialSetup() throws Exception{
+        //add pieces
         Rook RW1 = new Rook(0, 0, true);
         game[0][0].setPieceOnSquare(RW1);
 
@@ -117,6 +119,44 @@ public class GameBoard extends Board{
         String returnStr = new String();
         for (int j = 0; j < SIZEOFBOARD; j ++){
             for (int i = 0; i<SIZEOFBOARD; i++){
+                if (game[i][j].getTaken()){
+                    if (game[i][j].getPieceOnSquare() instanceof Rook){
+                        returnStr += "R";
+                    }
+                    else if (game[i][j].getPieceOnSquare() instanceof Pawn){
+                        returnStr += "P";
+                    }
+                    else if (game[i][j].getPieceOnSquare() instanceof Queen){
+                        returnStr += "Q";
+                    }
+                    else if (game[i][j].getPieceOnSquare() instanceof King){
+                        returnStr += "K";
+                    }
+                    else if (game[i][j].getPieceOnSquare() instanceof Knight){
+                        returnStr += "N";
+                    }
+                    else if (game[i][j].getPieceOnSquare() instanceof Bishop){
+                        returnStr += "B";
+                    }
+                    if (game[i][j].getPieceOnSquare().getColor()){
+                        returnStr += "W ";
+                    }
+                    else{
+                        returnStr += "B ";
+                    }
+                }
+                else {
+                    returnStr += "0  ";
+                }
+            }
+            returnStr += "\n";
+        }
+        return returnStr;
+    }
+    public String toStringReverse(){
+        String returnStr = new String();
+        for (int j = SIZEOFBOARD - 1; j >= 0; j --){
+            for (int i = SIZEOFBOARD - 1; i>= 0; i--){
                 if (game[i][j].getTaken()){
                     if (game[i][j].getPieceOnSquare() instanceof Rook){
                         returnStr += "R";

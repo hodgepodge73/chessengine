@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import Coords.*;
 
 public class King extends Piece{
+    //King piece
     public King(int x, int y, boolean colour) throws Exception{
         super(x, y, "King", colour);
         createMoveList();
